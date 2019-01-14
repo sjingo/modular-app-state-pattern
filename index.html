@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #overlay{
+            display:none;
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            z-index: -1;
+            background: rgba(0,0,0,0.3);
+        }
+        [data-side-menu="1"] #overlay{
+            display: block;
+        }
+        [data-side-menu="0"] #overlay{
+            display: none;
+        }
+        main button{
+            z-index: 2
+        }
+    </style>
+</head>
+<body data-side-menu="0" data-search-menu="0" >
+    <header>
+        <div id="search"></div>
+    </header>
+    <main>
+        <section>
+            <button data-toggle="side-menu">side</button>
+            <button data-toggle="search" >search</button>
+        </section>
+    </main>
+    <aside id="side-menu"></aside>
+    <footer></footer>
+    <div id="overlay"></div>
+</body>
+<script src="lib/index.js"></script>
+</html>
